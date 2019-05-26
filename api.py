@@ -1,26 +1,10 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+from elements import all_elements
 
 app = Flask(__name__)
 api = Api(app)
-
-elements = [
-    {
-        "name": "Hydrogen",
-        "symbol": "H",
-        "atomic number": 1,
-        "atomic mass": 1.00794,
-        "link": "http://www.chemicalelements.com/elements/h.html"
-    },
-    {
-        "name": "Helium",
-        "symbol": "He",
-        "atomic number": 2,
-        "atomic mass": 4.002602,
-        "link": "http://www.chemicalelements.com/elements/he.html"
-    }
-
-]
+elements = all_elements
 
 class Element(Resource):
     def get(self, symbol):
