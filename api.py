@@ -4,6 +4,7 @@ from elements import all_elements
 
 app = Flask(__name__)
 api = Api(app)
+SERVER_ADDR = "167.99.4.38"
 elements = all_elements
 
 class Element(Resource):
